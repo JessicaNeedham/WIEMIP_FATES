@@ -4,11 +4,11 @@ export COMPSET='1850_DATM%CRUJRA2024_CLM60%FATES_SICE_SOCN_SROF_SGLC_SWAV_SESP'
 export RES=f09_g17
 export MACH='olivia'
 export PROJECT='nn9188k'
-
+#export COMPILER=gnu
 export USER='jessica'
 export workpath='/cluster/work/projects/nn9188k/jessica'
 
-export TAG='noresm-fates-f09-wiemip-AD-spinup_v3'
+export TAG='noresm-fates-f09-wiemip-AD-spinup_debug_cdf5'
 export CASEROOT=$workpath/wiemip_runs
 export CIMEROOT=$workpath/noresm-wiemip-beta16/CTSM/cime/scripts
 
@@ -39,14 +39,17 @@ cd ${CASE_NAME}
 ./xmlchange REST_N=25
 ./xmlchange REST_OPTION=nyears
 ./xmlchange RESUBMIT=7
-./xmlchange DEBUG=FALSE
+./xmlchange DEBUG=TRUE
 
 ./xmlchange RUN_STARTDATE=0001-01-01
 ./xmlchange CLM_ACCELERATED_SPINUP=on
 ./xmlchange CLM_FORCE_COLDSTART=on
 ./xmlchange CCSM_CO2_PPMV=280.
-./xmlchange DATM_YR_START=1901
-./xmlchange DATM_YR_END=1920
+./xmlchange DATM_YR_START=1850
+./xmlchange DATM_YR_END=1852
+#./xmlchange DATM_YR_START=1901
+#./xmlchange DATM_YR_END=1920
+
 ./xmlchange DATM_PRESAERO=clim_1850
 
 ./xmlchange --subgroup case.run JOB_WALLCLOCK_TIME=24:00:00
@@ -55,6 +58,7 @@ cd ${CASE_NAME}
 ./xmlchange RUNDIR=${CASE_NAME}/run
 ./xmlchange EXEROOT=${CASE_NAME}/bld
 
+#
 
 cat >>  user_nl_clm <<EOF
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
@@ -65,6 +69,7 @@ fates_spitfire_mode=4
 stream_year_first_popdens=1850
 stream_year_last_popdens=1850
 model_year_align_popdens=1850
+fates_lu_transition_logic = 1
 use_fates_luh=.true.
 use_fates_lupft=.true.
 fates_harvest_mode='luhdata_area'
