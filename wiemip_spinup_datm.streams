@@ -32,9 +32,9 @@
 !   </datafiles>
 !------------------------------------------------------------------------
 
-CLMCRUJRA2024.Solar:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1850.nc, \
-/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1851.nc, \
-/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1852.nc, \
+CLMCRUJRA2024.Solar:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1850_cdf5.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1851_cdf5.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1852_cdf5.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1853.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1854.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1855.nc, \
@@ -53,9 +53,9 @@ CLMCRUJRA2024.Solar:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/st
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1868.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1869.nc
 
-CLMCRUJRA2024.Precip:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Precip.1850.nc, \
-/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1851.nc,\
-/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1852.nc,\
+CLMCRUJRA2024.Precip:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Precip.1850_cdf5.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1851_cdf5.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1852_cdf5.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1853.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1854.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1855.nc,\
@@ -75,9 +75,9 @@ CLMCRUJRA2024.Precip:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/s
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1868.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.Solar.1869.nc
 
-CLMCRUJRA2024.TPQW:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1850.nc, \
-/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1851.nc,\
-/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1852.nc,\
+CLMCRUJRA2024.TPQW:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1850_cdf5.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1851_cdf5.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1852_cdf5.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1853.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1854.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/clmforc.wiemip_stable_1deg.TPQWL.1855.nc,\
