@@ -8,7 +8,7 @@ export PROJECT='nn9188k'
 export USER='jessica'
 export workpath='/cluster/work/projects/nn9188k/jessica'
 
-export TAG='noresm-fates-f09-wiemip-AD-spinup_debug_cdf5'
+export TAG='noresm-fates-f09-wiemip-AD-spinup_debug_cdf5_full_meshfile'
 export CASEROOT=$workpath/wiemip_runs
 export CIMEROOT=$workpath/noresm-wiemip-beta16/CTSM/cime/scripts
 
@@ -46,7 +46,7 @@ cd ${CASE_NAME}
 ./xmlchange CLM_FORCE_COLDSTART=on
 ./xmlchange CCSM_CO2_PPMV=280.
 ./xmlchange DATM_YR_START=1850
-./xmlchange DATM_YR_END=1852
+./xmlchange DATM_YR_END=1869
 #./xmlchange DATM_YR_START=1901
 #./xmlchange DATM_YR_END=1920
 
