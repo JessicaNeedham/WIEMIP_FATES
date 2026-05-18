@@ -30,10 +30,6 @@ rm -rf ${CASE_NAME}
 
 cd ${CASE_NAME}
 
-# point to custom forcing
-#./xmlchange DIN_LOC_ROOT_CLMFORC=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg
-#./xmlchange DIN_LOC_ROOT=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg
-
 ./xmlchange STOP_N=50
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange REST_N=25
@@ -47,8 +43,6 @@ cd ${CASE_NAME}
 ./xmlchange CCSM_CO2_PPMV=280.
 ./xmlchange DATM_YR_START=1850
 ./xmlchange DATM_YR_END=1869
-#./xmlchange DATM_YR_START=1901
-#./xmlchange DATM_YR_END=1920
 
 ./xmlchange DATM_PRESAERO=clim_1850
 
@@ -65,6 +59,9 @@ fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4
 use_fates_sp=.false.
 use_fates_nocomp=.true.
 use_fates_fixed_biogeog=.true.
+do_transient_lakes = .false.
+do_transient_urban = .false.
+fates_stomatal_model='medlyn2011'
 fates_spitfire_mode=4
 stream_year_first_popdens=1850
 stream_year_last_popdens=1850
