@@ -8,7 +8,7 @@ export PROJECT='nn9188k'
 export USER='jessica'
 export workpath='/cluster/work/projects/nn9188k/jessica'
 
-export TAG='noresm-fates-f09-wiemip-AD-spinup_debug_cdf5_full_meshfile'
+export TAG='noresm-fates-f09-wiemip-AD-spinup'
 export CASEROOT=$workpath/wiemip_runs
 export CIMEROOT=$workpath/noresm-wiemip-beta16/CTSM/cime/scripts
 
@@ -39,7 +39,7 @@ cd ${CASE_NAME}
 ./xmlchange REST_N=25
 ./xmlchange REST_OPTION=nyears
 ./xmlchange RESUBMIT=7
-./xmlchange DEBUG=TRUE
+./xmlchange DEBUG=FALSE
 
 ./xmlchange RUN_STARTDATE=0001-01-01
 ./xmlchange CLM_ACCELERATED_SPINUP=on
