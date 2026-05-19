@@ -41,6 +41,7 @@ cd ${CASE_NAME}
 ./xmlchange CCSM_CO2_PPMV=280.
 ./xmlchange DATM_YR_START=1850
 ./xmlchange DATM_YR_END=1869
+./xmlchange DATM_YR_ALIGN=1850
 ./xmlchange DATM_PRESAERO=clim_1850
 
 # For real runs
@@ -52,7 +53,7 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-AD-spinup.2026-05-18/bld
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-AD-spinup.2026-05-19/bld
 
 cat >>  user_nl_clm <<EOF
 finidat=''

@@ -51,7 +51,7 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-AD-spinup.2026-05-18/bld
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-AD-spinup.2026-05-19/bld
 
 cat >>  user_nl_clm <<EOF
 finidat=''

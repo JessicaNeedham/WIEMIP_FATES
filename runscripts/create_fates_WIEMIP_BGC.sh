@@ -40,6 +40,7 @@ cd ${CASE_NAME}
 ./xmlchange CLM_ACCELERATED_SPINUP=off
 ./xmlchange DATM_YR_START=1850
 ./xmlchange DATM_YR_END=1869
+./xmlchange DATM_YR_ALIGN=1850
 ./xmlchange DATM_PRESAERO=clim_1850
 ./xmlchange CLM_CO2_TYPE=diagnostic
 ./xmlchange DATM_CO2_TSERIES=20tr
@@ -54,7 +55,7 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-AD-spinup.2026-05-18/bld
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-AD-spinup.2026-05-19/bld
 
 cat >>  user_nl_clm <<EOF
 finidat=''
