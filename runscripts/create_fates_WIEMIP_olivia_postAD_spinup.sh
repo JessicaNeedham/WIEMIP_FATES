@@ -45,6 +45,7 @@ cd ${CASE_NAME}
 ./xmlchange --subgroup case.run JOB_WALLCLOCK_TIME=24:00:00
 ./xmlchange --subgroup case.st_archive JOB_WALLCLOCK_TIME=00:30:00
 
+./xmlchange CLM_BLDNML_OPTS="-bgc fates -megan"
 
 ./xmlchange RUNDIR=${CASE_NAME}/run
 #./xmlchange EXEROOT=${CASE_NAME}/bld

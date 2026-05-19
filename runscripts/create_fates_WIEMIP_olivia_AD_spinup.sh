@@ -52,7 +52,8 @@ cd ${CASE_NAME}
 ./xmlchange RUNDIR=${CASE_NAME}/run
 ./xmlchange EXEROOT=${CASE_NAME}/bld
 
-#
+# turn on BVOCs
+./xmlchange CLM_BLDNML_OPTS="-bgc fates -megan"
 
 cat >>  user_nl_clm <<EOF
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
