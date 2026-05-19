@@ -33,7 +33,6 @@
 !------------------------------------------------------------------------
 CLMCRUJRA2024.Solar:meshfile=/cluster/work/projects/nn9560k/inputdata/WIEMIP/stable_1deg/ESMFmesh_WIEMIP_1deg_c260409.nc
 CLMCRUJRA2024.Solar:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/UKESM1-0-LL_1deg/clmforc.wiemip_UKESM1-0-LL_clim3_50perc_1pctCO2.Solar.1850.nc, \
-/cluster/work/projects/nn9560k/inputdata/WIEMIP/UKESM1-0-LL_1deg/clmforc.wiemip_UKESM1-0-LL_clim3_50perc_1pctCO2.Solar.1850.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/UKESM1-0-LL_1deg/clmforc.wiemip_UKESM1-0-LL_clim3_50perc_1pctCO2.Solar.1851.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/UKESM1-0-LL_1deg/clmforc.wiemip_UKESM1-0-LL_clim3_50perc_1pctCO2.Solar.1852.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/UKESM1-0-LL_1deg/clmforc.wiemip_UKESM1-0-LL_clim3_50perc_1pctCO2.Solar.1853.nc, \
