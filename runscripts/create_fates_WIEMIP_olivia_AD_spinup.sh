@@ -52,6 +52,9 @@ cd ${CASE_NAME}
 ./xmlchange RUNDIR=${CASE_NAME}/run
 ./xmlchange EXEROOT=${CASE_NAME}/bld
 
+./xmlchange NTASKS_LND=1408
+./xmlchange NTASKS_CPL=1536
+
 # turn on BVOCs
 ./xmlchange CLM_BLDNML_OPTS="-bgc fates -megan"
 
@@ -75,7 +78,7 @@ use_fates_potentialveg=.false.
 fluh_timeseries='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/LUH2_1850_steadystate_0.9x1.25_c260515.nc'
 flandusepftdat='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/fates_landuse_pft_surfdata_0.9x1.25_c260515.nc'
 hist_empty_htapes=.true.
-hist_fincl1='FCO2', 'FATES_SECONDARY_AREA_ANTHRO_AP','FATES_SECONDARY_AREA_AP','FATES_PRIMARY_AREA_AP','FATES_NPP_LU','FATES_GPP_LU',
+hist_fincl1='FCO2','FATES_SECONDARY_AREA_AP','FATES_PRIMARY_AREA_AP','FATES_NPP_LU','FATES_GPP_LU',
 'FATES_VEGC_PF', 'FATES_VEGC_LU', 'FATES_LAI', 'FATES_GPP_PF'
 EOF
 
