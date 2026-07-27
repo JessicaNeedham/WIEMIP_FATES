@@ -1,0 +1,564 @@
+!------------------------------------------------------------------------
+! This file is used to modify datm.streams.xml generated in $RUNDIR
+! Entries should have the form
+!  <streamname>:<stream_variable>= <new stream_value> (NO Quotes!!!)
+! The following are accepted values for a stream named foo
+!  foo:meshfile = character string
+!  foo:datafiles = comma separated string of full pathnames (e.g. file1,file2,file3...)
+!  foo:datavars = comma separated string of field pairs  (e.g. foo foobar,foo2 foobar2...)
+!  foo:taxmode = one of [cycle, extend, limit]
+!  foo:tintalgo = one of [lower,upper,nearest,linear,coszen]
+!  foo:readmode = single (only suported mode right now)
+!  foo:mapalgo = one of [bilinear,redist,nn,consf,consd,none]
+!  foo:dtlimit = real (1.5 is default)
+!  foo:year_first = integer
+!  foo:year_last = integer
+!  foo:year_align = integer
+!  foo:vectors = null or the names of the vector fields in the model (i.e. Sa_u:Sa_v)
+!  foo:lev_dimname: = one of [null,name of level dimenion name]
+!  foo:offset = integer
+! As an example:
+!   foo:year_first = 1950
+! would change the stream year_first stream_entry to 1950 for the foo stream block
+! NOTE: multi-line inputs are enabled by adding a \ at the end of the line
+! As an emaple:
+! foo:datafiles=foo1,foo2, \
+!     foo3
+! Will yield the following new entry for datafiles in stream foo
+!   <datafiles>
+!      <file>foo1</file>
+!      <file>foo2</file>
+!      <file>foo3</file>
+!   </datafiles>
+!------------------------------------------------------------------------
+CLMCRUJRA2024.Solar:meshfile=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/ESMFmesh_WIEMIP_0.5deg_c260603.nc
+CLMCRUJRA2024.Solar:year_first=1851
+CLMCRUJRA2024.Solar:year_last=2023
+CLMCRUJRA2024.Solar:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1851.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1852.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1853.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1854.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1855.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1856.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1857.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1858.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1859.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1860.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1861.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1862.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1863.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1864.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1865.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1866.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1867.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1868.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1869.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1870.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1871.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1872.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1873.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1874.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1875.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1876.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1877.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1878.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1879.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1880.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1881.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1882.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1883.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1884.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1885.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1886.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1887.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1888.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1889.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1890.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1891.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1892.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1893.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1894.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1895.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1896.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1897.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1898.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1899.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1900.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1901.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1902.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1903.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1904.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1905.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1906.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1907.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1908.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1909.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1910.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1911.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1912.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1913.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1914.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1915.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1916.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1917.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1918.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1919.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1920.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1921.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1922.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1923.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1924.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1925.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1926.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1927.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1928.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1929.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1930.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1931.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1932.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1933.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1934.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1935.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1936.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1937.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1938.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1939.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1940.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1941.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1942.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1943.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1944.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1945.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1946.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1947.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1948.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1949.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1950.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1951.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1952.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1953.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1954.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1955.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1956.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1957.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1958.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1959.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1960.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1961.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1962.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1963.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1964.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1965.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1966.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1967.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1968.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1969.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1970.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1971.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1972.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1973.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1974.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1975.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1976.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1977.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1978.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1979.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1980.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1981.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1982.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1983.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1984.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1985.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1986.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1987.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1988.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1989.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1990.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1991.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1992.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1993.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1994.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1995.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1996.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1997.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1998.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1999.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2000.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2001.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2002.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2003.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2004.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2005.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2006.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2007.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2008.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2009.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2010.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2011.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2012.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2013.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2014.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2015.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2016.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2017.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2018.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2019.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2020.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2021.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2022.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.2023.nc
+
+
+CLMCRUJRA2024.Precip:meshfile=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/ESMFmesh_WIEMIP_0.5deg_c260603.nc
+CLMCRUJRA2024.Precip:year_first=1851
+CLMCRUJRA2024.Precip:year_last=2023
+CLMCRUJRA2024.Precip:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1851.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1852.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1853.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1854.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1855.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1856.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1857.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1858.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1859.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1860.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1861.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1862.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1863.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1864.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1865.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1866.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1867.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1868.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1869.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1870.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1871.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1872.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1873.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1874.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1875.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1876.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1877.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1878.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1879.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1880.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1881.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1882.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1883.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1884.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1885.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1886.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1887.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1888.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1889.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1890.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1891.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1892.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1893.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1894.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1895.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1896.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1897.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1898.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1899.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1900.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1901.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1902.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1903.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1904.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1905.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1906.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1907.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1908.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1909.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1910.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1911.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1912.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1913.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1914.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1915.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1916.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1917.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1918.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1919.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1920.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1921.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1922.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1923.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1924.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1925.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1926.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1927.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1928.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1929.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1930.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1931.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1932.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1933.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1934.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1935.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1936.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1937.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1938.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1939.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1940.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1941.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1942.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1943.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1944.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1945.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1946.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1947.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1948.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1949.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1950.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1951.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1952.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1953.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1954.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1955.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1956.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1957.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1958.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1959.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1960.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1961.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1962.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1963.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1964.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1965.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1966.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1967.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1968.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1969.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1970.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1971.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1972.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1973.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1974.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1975.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1976.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1977.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1978.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1979.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1980.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1981.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1982.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1983.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1984.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1985.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1986.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1987.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1988.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1989.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1990.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1991.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1992.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1993.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1994.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1995.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1996.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1997.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1998.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1999.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2000.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2001.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2002.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2003.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2004.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2005.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2006.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2007.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2008.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2009.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2010.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2011.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2012.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2013.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2014.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2015.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2016.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2017.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2018.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2019.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2020.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2021.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2022.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.2023.nc
+
+CLMCRUJRA2024.TPQW:meshfile=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/ESMFmesh_WIEMIP_0.5deg_c260603.nc
+CLMCRUJRA2024.TPQW:year_first=1851
+CLMCRUJRA2024.TPQW:year_last=2023
+CLMCRUJRA2024.TPQW:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1851.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1852.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1853.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1854.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1855.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1856.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1857.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1858.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1859.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1860.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1861.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1862.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1863.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1864.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1865.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1866.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1867.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1868.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1869.nc,\
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1870.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1871.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1872.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1873.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1874.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1875.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1876.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1877.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1878.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1879.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1880.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1881.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1882.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1883.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1884.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1885.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1886.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1887.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1888.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1889.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1890.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1891.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1892.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1893.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1894.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1895.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1896.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1897.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1898.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1899.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1900.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1901.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1902.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1903.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1904.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1905.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1906.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1907.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1908.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1909.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1910.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1911.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1912.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1913.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1914.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1915.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1916.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1917.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1918.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1919.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1920.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1921.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1922.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1923.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1924.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1925.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1926.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1927.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1928.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1929.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1930.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1931.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1932.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1933.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1934.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1935.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1936.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1937.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1938.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1939.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1940.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1941.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1942.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1943.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1944.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1945.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1946.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1947.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1948.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1949.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1950.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1951.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1952.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1953.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1954.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1955.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1956.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1957.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1958.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1959.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1960.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1961.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1962.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1963.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1964.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1965.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1966.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1967.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1968.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1969.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1970.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1971.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1972.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1973.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1974.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1975.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1976.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1977.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1978.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1979.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1980.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1981.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1982.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1983.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1984.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1985.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1986.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1987.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1988.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1989.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1990.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1991.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1992.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1993.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1994.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1995.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1996.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1997.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1998.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1999.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2000.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2001.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2002.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2003.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2004.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2005.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2006.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2007.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2008.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2009.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2010.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2011.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2012.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2013.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2014.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2015.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2016.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2017.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2018.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2019.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2020.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2021.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2022.nc, \
+/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2023.nc
