@@ -34,6 +34,8 @@
 CLMCRUJRA2024.Solar:meshfile=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/ESMFmesh_WIEMIP_0.5deg_c260603.nc
 CLMCRUJRA2024.Solar:year_first=1851
 CLMCRUJRA2024.Solar:year_last=2023
+CLMCRUJRA2024.Solar:year_align=1851
+CLMCRUJRA2024.Solar:mapalgo=bilinear
 CLMCRUJRA2024.Solar:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1851.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1852.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Solar.1853.nc, \
@@ -212,6 +214,8 @@ CLMCRUJRA2024.Solar:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/hi
 CLMCRUJRA2024.Precip:meshfile=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/ESMFmesh_WIEMIP_0.5deg_c260603.nc
 CLMCRUJRA2024.Precip:year_first=1851
 CLMCRUJRA2024.Precip:year_last=2023
+CLMCRUJRA2024.Precip:year_align=1851
+CLMCRUJRA2024.Precip:mapalgo=bilinear
 CLMCRUJRA2024.Precip:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1851.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1852.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.Precip.1853.nc,\
@@ -389,6 +393,8 @@ CLMCRUJRA2024.Precip:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/h
 CLMCRUJRA2024.TPQW:meshfile=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/ESMFmesh_WIEMIP_0.5deg_c260603.nc
 CLMCRUJRA2024.TPQW:year_first=1851
 CLMCRUJRA2024.TPQW:year_last=2023
+CLMCRUJRA2024.TPQW:year_align=1851
+CLMCRUJRA2024.TPQW:mapalgo=bilinear
 CLMCRUJRA2024.TPQW:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1851.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1852.nc,\
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.1853.nc,\
@@ -562,3 +568,13 @@ CLMCRUJRA2024.TPQW:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/his
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2021.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2022.nc, \
 /cluster/work/projects/nn9560k/inputdata/WIEMIP/historical_three_stream/clmforc.wiemip_historical.TPQWL.2023.nc
+
+co2tseries.20tr:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/co2/WIEMIP_l_co2_ann_2024_2300_copied_to_fco2_datm_global_simyr_1700-2024_TRENDY_c250625.nc
+co2tseries.20tr:year_first=1851
+co2tseries.20tr:year_last=2023
+co2tseries.20tr:year_align=1851
+
+presaero.hist:datafiles=/cluster/work/projects/nn9560k/inputdata/WIEMIP/presaero/aerodep_clm_SSP370_b.e21.BWSSP370cmip6.f09_g17.CMIP6-SSP3-7.0-WACCM.001_1849-2101_monthly_0.9x1.25_c201103.nc
+presaero.hist:year_first=1851
+presaero.hist:year_last=2023
+presaero.hist:year_align=1851

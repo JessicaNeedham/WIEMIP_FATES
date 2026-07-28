@@ -37,13 +37,13 @@ cd ${CASE_NAME}
 
 ./xmlchange RUN_STARTDATE=1851-01-01
 ./xmlchange CLM_ACCELERATED_SPINUP=off
-./xmlchange DATM_YR_START=1850
-./xmlchange DATM_YR_END=1869
-./xmlchange DATM_PRESAERO=clim_1850
+./xmlchange DATM_YR_START=1851
+./xmlchange DATM_YR_END=2023
 ./xmlchange DATM_YR_ALIGN=1851
 ./xmlchange CLM_CO2_TYPE=diagnostic
 ./xmlchange DATM_CO2_TSERIES=20tr
 ./xmlchange CCSM_BGC=CO2A
+./xmlchange DATM_PRESAERO=hist
 
 ./xmlchange --subgroup case.run JOB_WALLCLOCK_TIME=24:00:00
 ./xmlchange --subgroup case.st_archive JOB_WALLCLOCK_TIME=00:30:00
@@ -75,6 +75,10 @@ do_transient_lakes = .false.
 do_transient_urban = .false.
 fates_stomatal_model='medlyn2011'
 fates_spitfire_mode=4
+stream_year_first_popdens=1851
+stream_year_last_popdens=2023
+model_year_align_popdens=1851
+stream_fldfilename_popdens='/cluster/work/projects/nn9560k/inputdata/WIEMIP/pop/gn/pop-dens_input4MIPs_population_CMIP_PIK-CMIP-1-0-1_gn_1850-2025.nc'
 fates_lu_transition_logic = 1
 use_fates_luh=.true.
 use_fates_lupft=.true.
