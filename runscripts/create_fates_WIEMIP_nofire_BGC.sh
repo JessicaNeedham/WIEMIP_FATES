@@ -7,9 +7,9 @@ export PROJECT='nn9188k'
 export USER='jessica'
 export workpath='/cluster/work/projects/nn9188k/jessica'
 
-export TAG='noresm-fates-f09-wiemip-nofire-BGC'
-export CASEROOT=$workpath/wiemip_runs
-export CIMEROOT=$workpath/noresm-wiemip-future-2/CTSM/cime/scripts
+export TAG='noresm-fates-f09-wiemip-nofire-BGC_v2'
+export CASEROOT=$workpath/wiemip_runs_v2
+export CIMEROOT=$workpath/noresm-wiemip/CTSM/cime/scripts
 
 cd ${CIMEROOT}
 
@@ -65,7 +65,7 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-21/bld
 
 cat >>  user_nl_clm <<EOF
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
