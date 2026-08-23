@@ -2,10 +2,10 @@
 
 export COMPSET='1850_DATM%CRUJRA2024_CLM60%FATES_SICE_SOCN_SROF_SGLC_SWAV_SESP'
 export RES=f09_g17
-export MACH='olivia'
+export MACH='betzy'
 export PROJECT='nn9188k'
 export USER='jessica'
-export workpath='/cluster/work/projects/nn9188k/jessica'
+export workpath='/cluster/work/users/jessica'
 
 exprmts="l m ml ml-cf hl hl-cf vl vl-cf"
 
@@ -70,8 +70,8 @@ for exp in $exprmts; do
     ./xmlchange EXEROOT=
 
     cat >>  user_nl_clm <<EOF
-finidat=''
-fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
+finidat='/cluster/work/users/jessica/wiemip_misc'
+fsurdat='/cluster/work/users/jessica/wiemip_misc/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
 use_fates_sp=.false.
 use_fates_nocomp=.true.
 use_fates_fixed_biogeog=.true.
@@ -82,14 +82,14 @@ fates_spitfire_mode=4
 stream_year_first_popdens=2023
 stream_year_last_popdens=2023
 model_year_align_popdens=2024
-stream_fldfilename_popdens='/cluster/work/projects/nn9560k/inputdata/WIEMIP/pop/gn/pop-dens_input4MIPs_population_CMIP_PIK-CMIP-1-0-1_gn_1850-2025.nc'
+stream_fldfilename_popdens='/cluster/shared/noresm/inputdata/WIEMIP/pop/gn/pop-dens_input4MIPs_population_CMIP_PIK-CMIP-1-0-1_gn_1850-2025.nc'
 fates_lu_transition_logic = 1
 use_fates_luh=.true.
 use_fates_lupft=.true.
 fates_harvest_mode='luhdata_area'
 use_fates_potentialveg=.false.
-fluh_timeseries='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/LUH2_2023_steadystate_0.9x1.25_c260622.nc'
-flandusepftdat='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/fates_landuse_pft_surfdata_0.9x1.25_c260515.nc'
+fluh_timeseries='/cluster/work/users/jessica/wiemip_misc/LUH2_2023_steadystate_0.9x1.25_c260622.nc'
+flandusepftdat='/cluster/work/users/jessica/wiemip_misc/fates_landuse_pft_surfdata_0.9x1.25_c260515.nc'
 hist_mfilt = 1, 1
 hist_nhtfrq = 0, -8760
 hist_fincl1=
@@ -141,7 +141,7 @@ hist_fincl2=
 'FATES_NOCOMP_PATCHAREA_PF','FATES_FRACTION'
 EOF
 
-    cp /cluster/work/projects/nn9560k/inputdata/WIEMIP/wiemip_future_$exp_datm.streams user_nl_datm_streams
+    cp /cluster/shared/noresm/inputdata/WIEMIP/wiemip_future_$exp_datm.streams user_nl_datm_streams
 
     ./case.setup
     #./case.build
