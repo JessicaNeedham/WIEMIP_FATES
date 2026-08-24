@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export COMPSET='1850_DATM%CRUJRA2024_CLM60%FATES_SICE_SOCN_SROF_SGLC_SWAV_SESP'
+export COMPSET='1850_DATM%CRUJRA2024b_CLM60%FATES-NCFB%NORESM_SICE_SOCN_SROF_SGLC_SWAV'
 export RES=f09_g17
 export MACH='olivia'
 export PROJECT='nn9188k'
@@ -64,12 +64,14 @@ cd ${CASE_NAME}
 
 cat >>  user_nl_clm <<EOF
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
+fates_paramfile='/cluster/work/projects/nn9188k/jessica/noresm-wiemip/CTSM/src/fates/parameter_files/fates_params_noresm.json'
 use_fates_sp=.false.
 use_fates_nocomp=.true.
 use_fates_fixed_biogeog=.true.
 do_transient_lakes = .false.
 do_transient_urban = .false.
 fates_stomatal_model='medlyn2011'
+fates_radiation_model='twostream'
 fates_spitfire_mode=0
 stream_year_first_popdens=1850
 stream_year_last_popdens=1850
