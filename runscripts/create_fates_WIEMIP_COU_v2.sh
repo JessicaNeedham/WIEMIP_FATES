@@ -3,7 +3,7 @@
 export COMPSET='1850_DATM%CRUJRA2024b_CLM60%FATES-NCFB%NORESM_SICE_SOCN_SROF_SGLC_SWAV'
 export RES=f09_g17
 export MACH='olivia'
-export PROJECT='nn9188k'
+export PROJECT='nn9560k'
 export USER='jessica'
 export workpath='/cluster/work/projects/nn9188k/jessica'
 
@@ -64,11 +64,11 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-AD-spinup_v2.2026-08-21/bld
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-AD-spinup_v2.2026-08-24/bld
 
 cat >>  user_nl_clm <<EOF
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
-finidat=''
+finidat='/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-postAD-spinup_v2.2026-08-30/run/noresm-fates-f09-wiemip-postAD-spinup_v2.2026-08-30.clm2.r.0551-01-01-00000.nc'
 use_fates_sp=.false.
 use_fates_nocomp=.true.
 use_fates_fixed_biogeog=.true.
