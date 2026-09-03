@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export COMPSET='1850_DATM%CRUJRA2024_CLM60%FATES_SICE_SOCN_SROF_SGLC_SWAV_SESP'
+export COMPSET='1850_DATM%CRUJRA2024b_CLM60%FATES-NCFB%NORESM_SICE_SOCN_SROF_SGLC_SWAV'
 export RES=f09_g17
 export MACH='betzy'
 export PROJECT='nn9188k'
@@ -74,6 +74,7 @@ fates_stomatal_model='medlyn2011'
 fates_spitfire_mode=4
 stream_year_first_popdens=1850
 stream_year_last_popdens=1850
+stream_fldfilename_popdens='/cluster/shared/noresm/inputdata/WIEMIP/pop/gn/pop-dens_input4MIPs_population_CMIP_PIK-CMIP-1-0-1_gn_1850-2025.nc'
 fates_lu_transition_logic = 1
 use_fates_luh=.true.
 use_fates_lupft=.true.
@@ -135,5 +136,5 @@ EOF
 cp /cluster/shared/noresm/inputdata/WIEMIP/wiemip_future_spinup_datm.streams user_nl_datm_streams
 
 ./case.setup
-#./case.build
+./case.build
 ./case.submit
