@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export COMPSET='1850_DATM%CRUJRA2024_CLM60%FATES_SICE_SOCN_SROF_SGLC_SWAV_SESP'
+export COMPSET='1850_DATM%CRUJRA2024b_CLM60%FATES-NCFB%NORESM_SICE_SOCN_SROF_SGLC_SWAV'
 export RES=f09_g17
 export MACH='olivia'
-export PROJECT='nn9188k'
+export PROJECT='nn9560k'
 export USER='jessica'
 export workpath='/cluster/work/projects/nn9188k/jessica'
 
@@ -35,7 +35,7 @@ cd ${CASE_NAME}
 ./xmlchange RESUBMIT=15
 ./xmlchange DEBUG=FALSE
 
-./xmlchange RUN_STARTDATE=0401-01-01 # check this matches end of AD spinup run
+./xmlchange RUN_STARTDATE=0351-01-01 # check this matches end of AD spinup run
 ./xmlchange CLM_ACCELERATED_SPINUP=off
 ./xmlchange CCSM_CO2_PPMV=280.
 ./xmlchange DATM_YR_START=1850
@@ -59,10 +59,10 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-21/bld
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-24/bld
 
 cat >>  user_nl_clm <<EOF
-finidat='/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-21/run/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-21.clm2.r.0401-01-01-00000.nc'
+finidat='/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-24/run/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-24.clm2.r.0351-01-01-00000.nc'
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
 use_fates_sp=.false.
 use_fates_nocomp=.true.
@@ -73,7 +73,7 @@ fates_stomatal_model='medlyn2011'
 fates_spitfire_mode=0
 stream_year_first_popdens=1850
 stream_year_last_popdens=1850
-model_year_align_popdens=1850
+model_year_align_popdens=351
 fates_lu_transition_logic = 1
 use_fates_luh=.true.
 use_fates_lupft=.true.

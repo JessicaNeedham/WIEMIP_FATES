@@ -1,15 +1,15 @@
 #!/bin/bash
 
-export COMPSET='1850_DATM%CRUJRA2024b_CLM60%FATES-NCFB%NORESM_SICE_SOCN_SROF_SGLC_SWAV'
+export COMPSET='1850_DATM%CRUJRA2024_CLM60%FATES_SICE_SOCN_SROF_SGLC_SWAV_SESP'
 export RES=f09_g17
 export MACH='olivia'
-export PROJECT='nn9560k'
+export PROJECT='nn9188k'
 export USER='jessica'
 export workpath='/cluster/work/projects/nn9188k/jessica'
 
-export TAG='noresm-fates-f09-wiemip-CTRL_v2'
-export CASEROOT=$workpath/wiemip_runs_v2
-export CIMEROOT=$workpath/noresm-wiemip/CTSM/cime/scripts
+export TAG='noresm-fates-f09-wiemip-future-vl-cf'
+export CASEROOT=$workpath/wiemip_runs
+export CIMEROOT=$workpath/noresm-wiemip-future-v2/CTSM/cime/scripts
 
 cd ${CIMEROOT}
 
@@ -28,23 +28,23 @@ rm -rf ${CASE_NAME}
 
 cd ${CASE_NAME}
 
-# 
 ./xmlchange STOP_N=25
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange REST_N=25
 ./xmlchange REST_OPTION=nyears
-./xmlchange RESUBMIT=5
+./xmlchange RESUBMIT=11
 ./xmlchange DEBUG=FALSE
 
-./xmlchange RUN_STARTDATE=1850-01-01 
+./xmlchange RUN_STARTDATE=2024-01-01
 ./xmlchange CLM_ACCELERATED_SPINUP=off
-./xmlchange CCSM_CO2_PPMV=280.
-./xmlchange DATM_YR_START=1850
-./xmlchange DATM_YR_END=1869
-./xmlchange DATM_YR_ALIGN=1850
-./xmlchange DATM_PRESAERO=clim_1850
+./xmlchange DATM_YR_START=2024
+./xmlchange DATM_YR_END=2300
+./xmlchange DATM_YR_ALIGN=2024
+./xmlchange CLM_CO2_TYPE=diagnostic
+./xmlchange DATM_CO2_TSERIES=20tr
+./xmlchange CCSM_BGC=CO2A
+./xmlchange DATM_PRESAERO=hist
 
-# For real runs
 ./xmlchange --subgroup case.run JOB_WALLCLOCK_TIME=24:00:00
 ./xmlchange --subgroup case.st_archive JOB_WALLCLOCK_TIME=00:30:00
 
@@ -57,34 +57,35 @@ cd ${CASE_NAME}
 ./xmlchange ROOTPE_ATM=0
 ./xmlchange ROOTPE_LND=256
 
-
 ./xmlchange RUNDIR=${CASE_NAME}/run
 #./xmlchange EXEROOT=${CASE_NAME}/bld
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-AD-spinup_v2.2026-08-24/bld
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-future_AD-spinup.2026-06-24/bld
 
 cat >>  user_nl_clm <<EOF
+fates_paramfile='/cluster/home/jessica/WIEMIP/paramfiles/fates_params_noresm_wiemip.json'
+finidat='/cluster/work/projects/nn9188k/jessica/wiemip_runs/noresm-fates-f09-wiemip-future-postAD-spinup.2026-07-06/run/noresm-fates-f09-wiemip-future-postAD-spinup.2026-07-06.clm2.r.0801-01-01-00000.nc'
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
-finidat='/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-postAD-spinup_v2.2026-08-30/run/noresm-fates-f09-wiemip-postAD-spinup_v2.2026-08-30.clm2.r.0551-01-01-00000.nc'
 use_fates_sp=.false.
 use_fates_nocomp=.true.
 use_fates_fixed_biogeog=.true.
 do_transient_lakes = .false.
 do_transient_urban = .false.
 fates_stomatal_model='medlyn2011'
-fates_lu_transition_logic=1
+fates_spitfire_mode=4
+stream_year_first_popdens=2023
+stream_year_last_popdens=2023
+model_year_align_popdens=2024
+stream_fldfilename_popdens='/cluster/work/projects/nn9560k/inputdata/WIEMIP/pop/gn/pop-dens_input4MIPs_population_CMIP_PIK-CMIP-1-0-1_gn_1850-2025.nc'
+fates_lu_transition_logic = 1
 use_fates_luh=.true.
 use_fates_lupft=.true.
 fates_harvest_mode='luhdata_area'
 use_fates_potentialveg=.false.
-fluh_timeseries='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/LUH2_1850_steadystate_0.9x1.25_c260515.nc'
+fluh_timeseries='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/LUH2_2023_steadystate_0.9x1.25_c260622.nc'
 flandusepftdat='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/fates_landuse_pft_surfdata_0.9x1.25_c260515.nc'
-fates_spitfire_mode=4
-stream_year_first_popdens=1850
-stream_year_last_popdens=1850
-model_year_align_popdens=1850
 hist_mfilt = 1, 1
 hist_nhtfrq = 0, -8760
 hist_fincl1=
@@ -136,7 +137,7 @@ hist_fincl2=
 'FATES_NOCOMP_PATCHAREA_PF','FATES_FRACTION'
 EOF
 
-cp /cluster/work/projects/nn9560k/inputdata/WIEMIP/wiemip_spinup_datm.streams user_nl_datm_streams
+cp /cluster/work/projects/nn9560k/inputdata/WIEMIP/wiemip_future_vl_cf_datm.streams user_nl_datm_streams
 
 ./case.setup
 #./case.build
