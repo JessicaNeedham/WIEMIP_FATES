@@ -43,7 +43,7 @@ cd ${CASE_NAME}
 ./xmlchange DATM_YR_ALIGN=1850
 ./xmlchange DATM_PRESAERO=clim_1850
 ./xmlchange CLM_CO2_TYPE=diagnostic
-./xmlchange DATM_CO2_TSERIES=20tr
+./xmlchange DATM_CO2_TSERIES=cmip7_20tr
 ./xmlchange CCSM_BGC=CO2A
 
 # For real runs
@@ -64,7 +64,7 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-AD-spinup_v2.2026-08-24/bld
+./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-CTRL_v2.2026-09-03/bld
 
 cat >>  user_nl_clm <<EOF
 fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
