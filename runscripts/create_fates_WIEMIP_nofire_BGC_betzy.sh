@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export COMPSET='1850_DATM%CRUJRA2024_CLM60%FATES_SICE_SOCN_SROF_SGLC_SWAV_SESP'
+export COMPSET='1850_DATM%CRUJRA2024b_CLM60%FATES-NCFB%NORESM_SICE_SOCN_SROF_SGLC_SWAV'
 export RES=f09_g17
-export MACH='olivia'
+export MACH='betzy'
 export PROJECT='nn9188k'
 export USER='jessica'
-export workpath='/cluster/work/projects/nn9188k/jessica'
+export workpath='/cluster/work/users/jessica'
 
 export TAG='noresm-fates-f09-wiemip-nofire-BGC_v2'
 export CASEROOT=$workpath/wiemip_runs_v2
@@ -43,7 +43,7 @@ cd ${CASE_NAME}
 ./xmlchange DATM_YR_ALIGN=1850
 ./xmlchange DATM_PRESAERO=clim_1850
 ./xmlchange CLM_CO2_TYPE=diagnostic
-./xmlchange DATM_CO2_TSERIES=20tr
+./xmlchange DATM_CO2_TSERIES=cmip7_20tr
 ./xmlchange CCSM_BGC=CO2A
 
 # For real runs
@@ -65,11 +65,11 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-21/bld
+./xmlchange EXEROOT=/cluster/work/users/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-overshoot-CTRL_v2.2026-09-03/bld
 
 cat >>  user_nl_clm <<EOF
-fsurdat='/cluster/work/projects/nn9560k/inputdata/lnd/clm2/surfdata_esmf/ctsm5.4.0/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
-finidat=''
+fsurdat='/cluster/work/users/jessica/wiemip_misc/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
+finidat='/cluster/work/users/jessica/wiemip_misc/'
 use_fates_sp=.false.
 use_fates_nocomp=.true.
 use_fates_fixed_biogeog=.true.
@@ -81,8 +81,8 @@ use_fates_luh=.true.
 use_fates_lupft=.true.
 fates_harvest_mode='luhdata_area'
 use_fates_potentialveg=.false.
-fluh_timeseries='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/LUH2_1850_steadystate_0.9x1.25_c260515.nc'
-flandusepftdat='/cluster/work/projects/nn9188k/jessica/wiemip-lufiles/fates_landuse_pft_surfdata_0.9x1.25_c260515.nc'
+fluh_timeseries='/cluster/work/users/jessica/wiemip_misc/LUH2_1850_steadystate_0.9x1.25_c260515.nc'
+flandusepftdat='/cluster/work/users/jessica/wiemip_misc/fates_landuse_pft_surfdata_0.9x1.25_c260515.nc'
 fates_spitfire_mode=0
 stream_year_first_popdens=1850
 stream_year_last_popdens=1850
@@ -139,7 +139,7 @@ hist_fincl2=
 EOF
 
 
-cp /cluster/work/projects/nn9560k/inputdata/WIEMIP/wiemip_BGC_datm.streams user_nl_datm_streams
+cp /cluster/shared/noresm/inputdata/WIEMIP/wiemip_BGC_datm.streams user_nl_datm_streams
 
 ./case.setup
 #./case.build

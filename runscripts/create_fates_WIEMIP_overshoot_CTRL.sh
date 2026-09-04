@@ -63,7 +63,7 @@ cd ${CASE_NAME}
 #./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-overshoot_AD-spinup_v2.2026-08-21/bld
 
 cat >>  user_nl_clm <<EOF
-finidat='/cluster/work/users/jessica/wiemip_misc/'
+finidat='/cluster/work/users/jessica/wiemip_misc/noresm-fates-f09-wiemip-overshoot-postAD-spinup_v2.2026-08-30.clm2.r.0551-01-01-00000.nc'
 fsurdat='/cluster/work/users/jessica/wiemip_misc/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
 use_fates_sp=.false.
 use_fates_nocomp=.true.
@@ -74,7 +74,6 @@ fates_stomatal_model='medlyn2011'
 fates_spitfire_mode=4
 stream_year_first_popdens=1850
 stream_year_last_popdens=1850
-stream_fldfilename_popdens='/cluster/shared/noresm/inputdata/WIEMIP/pop/gn/pop-dens_input4MIPs_population_CMIP_PIK-CMIP-1-0-1_gn_1850-2025.nc'
 fates_lu_transition_logic = 1
 use_fates_luh=.true.
 use_fates_lupft=.true.

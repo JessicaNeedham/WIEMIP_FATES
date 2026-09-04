@@ -41,7 +41,7 @@ cd ${CASE_NAME}
 ./xmlchange DATM_YR_END=2023
 ./xmlchange DATM_YR_ALIGN=1851
 ./xmlchange CLM_CO2_TYPE=diagnostic
-./xmlchange DATM_CO2_TSERIES=20tr
+./xmlchange DATM_CO2_TSERIES=cmip7_20tr
 ./xmlchange CCSM_BGC=CO2A
 ./xmlchange DATM_PRESAERO=hist
 
@@ -62,10 +62,10 @@ cd ${CASE_NAME}
 
 # use existing build
 ./xmlchange BUILD_COMPLETE=TRUE
-./xmlchange EXEROOT=
+./xmlchange EXEROOT=/cluster/work/users/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-overshoot-CTRL_v2.2026-09-03/bld
 
 cat >>  user_nl_clm <<EOF
-finidat='/cluster/work/users/jessica/wiemip_misc/'
+finidat='/cluster/work/users/jessica/wiemip_misc/noresm-fates-f09-wiemip-overshoot-postAD-spinup_v2.2026-08-30.clm2.r.0551-01-01-00000.nc'
 fsurdat='/cluster/work/users/jessica/wiemip_misc/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
 use_fates_sp=.false.
 use_fates_nocomp=.true.

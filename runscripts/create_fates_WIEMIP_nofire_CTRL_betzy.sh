@@ -59,11 +59,11 @@ cd ${CASE_NAME}
 
 
 ./xmlchange RUNDIR=${CASE_NAME}/run
-./xmlchange EXEROOT=${CASE_NAME}/bld
+#./xmlchange EXEROOT=${CASE_NAME}/bld
 
 # use existing build
-#./xmlchange BUILD_COMPLETE=TRUE
-#./xmlchange EXEROOT=/cluster/work/projects/nn9188k/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-nofire-AD-spinup_v2.2026-08-21/bld
+./xmlchange BUILD_COMPLETE=TRUE
+./xmlchange EXEROOT=/cluster/work/users/jessica/wiemip_runs_v2/noresm-fates-f09-wiemip-overshoot-CTRL_v2.2026-09-03/bld
 
 cat >>  user_nl_clm <<EOF
 fsurdat='/cluster/work/users/jessica/wiemip_misc/surfdata_0.9x1.25_hist_1850_16pfts_WIEMIP_c260408.nc'
@@ -139,5 +139,5 @@ EOF
 cp /cluster/shared/noresm/inputdata/WIEMIP/wiemip_spinup_datm.streams user_nl_datm_streams
 
 ./case.setup
-./case.build
+#./case.build
 ./case.submit
